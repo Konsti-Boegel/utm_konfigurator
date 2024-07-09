@@ -1,4 +1,5 @@
-channels = ['Handzettel',
+channels = ['',
+            'Handzettel',
             'Newsletter',
             'App']
 

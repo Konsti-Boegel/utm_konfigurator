@@ -1,4 +1,5 @@
-project = ['ALDI Deals',
+project = ['',
+           'ALDI Deals',
            'ALDI Sports',
            'RG Butzbach',
            'ALDIventskalender']

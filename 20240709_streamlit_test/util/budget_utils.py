@@ -1,5 +1,4 @@
-budget = ['',
-          'Paid',
+budget = ['Paid',
           'Organic']
 
 def get_budget():
