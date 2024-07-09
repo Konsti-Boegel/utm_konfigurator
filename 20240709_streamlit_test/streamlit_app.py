@@ -35,6 +35,7 @@ user_format = st.selectbox('Format', sorted(set(get_format())))
 # Selectbox für Projekte
 user_project = st.selectbox('Projekt', sorted(set(get_project())))
 
+
 # Starte den Thread für die Warnung
 warning_thread = threading.Thread(target=show_warning([user_url, user_channel, user_channel_group, user_budget, user_format, user_project]))
 warning_thread.start()
