@@ -3,14 +3,13 @@ import streamlit as st
 import time
 
 
-
-
-
 # Funktion zur Anzeige der Warnung
 def show_warning(missing_parameters):
     null_params = check_null(missing_parameters)
     if null_params:
         st.warning(f'Fehlende Angaben: {", ".join(null_params)}')
+        #st.warning(f'test')
+
 
 # Funktion zur Suche nach leeren Parametern
 def check_null(parameters):
@@ -19,6 +18,8 @@ def check_null(parameters):
         if value == '':
             null_parameters.append(key)
     return null_parameters
+
+
 
 # Funktion zur Erstellung des UTM-Links
 def create(param_dict):
@@ -32,6 +33,7 @@ def create(param_dict):
             channel_group=param_dict.get('user_channel_group', '')
         )
         st.success(f'Erstellter UTM-Link: {utm_link}')
+
 
 def reset():
     return 1
