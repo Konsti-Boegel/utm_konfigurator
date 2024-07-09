@@ -51,7 +51,8 @@ warning_thread.start()
 
 
 # Button für Link-Erstellung
-st.button('Link erstellen', on_click=create(param_dict))
+if st.button('Link erstellen'):
+    create(param_dict)
 # Button für Reset
 st.button('Reset')
 
