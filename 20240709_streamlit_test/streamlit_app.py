@@ -1,5 +1,7 @@
 import os
 import sys
+import threading
+import time
 
 current_dir = os.getcwd()
 sys.path.insert(0, current_dir)
@@ -18,7 +20,7 @@ st.write("""
 UTM-Link Erstellung
 """)
 
-show_warning(['1', '2', 'project', 'test'])
+
 
 # Text-Input für URL
 user_url = st.text_input('Landingpage-URL eingeben:')
@@ -32,6 +34,10 @@ user_budget = st.radio('Werbebudget', get_budget())
 user_format = st.selectbox('Format', sorted(set(get_format())))
 # Selectbox für Projekte
 user_project = st.selectbox('Projekt', sorted(set(get_project())))
+
+# Starte den Thread für die Warnung
+warning_thread = threading.Thread(target=show_warning([user_url, user_channel, user_channel_group, user_budget, user_format, user_project]))
+warning_thread.start()
 
 
 # Button für Link-Erstellung
