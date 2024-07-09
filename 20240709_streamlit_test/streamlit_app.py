@@ -57,11 +57,17 @@ warning_thread = threading.Thread(target=show_warning(get_param_dict()))
 warning_thread.start()
 
 
+# Zwei Buttons nebeneinander platzieren
+col1, col2 = st.columns(2)
+
 # Button für Link-Erstellung
-if st.button('Link erstellen'):
-    create(get_param_dict())
+with col1:
+    if st.button('Link erstellen'):
+        create(get_param_dict())
+
 # Button für Reset
-st.button('Reset')
+with col2:
+    if st.button('Reset'):
 
 
 # streamlit run 20240709_streamlit_test/streamlit_app.py
