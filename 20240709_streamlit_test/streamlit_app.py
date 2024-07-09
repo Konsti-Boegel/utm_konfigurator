@@ -18,7 +18,7 @@ st.write("""
 UTM-Link Erstellung
 """)
 
-show_warning()
+show_warning(['1', '2', 'project'])
 
 # Text-Input für URL
 user_url = st.text_input('Landingpage-URL eingeben:')
