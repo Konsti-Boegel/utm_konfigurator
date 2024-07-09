@@ -15,6 +15,7 @@ from util.format_utils import *
 from util.project_utils import *
 from util.global_functions import *
 from util.global_utils import *
+from util.form_utils import *
 
 
 st.write("""
@@ -36,7 +37,6 @@ user_format = st.selectbox('Format', sorted(set(get_format())))
 # Selectbox für Projekte
 user_project = st.selectbox('Projekt', sorted(set(get_project())))
 
-
 param_dict = {'URL': user_url,
               'Kanal': user_channel,
               'Kanalgruppe': user_channel_group,
@@ -44,9 +44,12 @@ param_dict = {'URL': user_url,
               'Format': user_format,
               'Projekt': user_project}
 
+def get_param_dict():
+    return param_dict
+
 
 # Starte den Thread für die Warnung
-warning_thread = threading.Thread(target=show_warning(param_dict))
+warning_thread = threading.Thread(target=show_warning(get_param_dict()))
 warning_thread.start()
 
 
