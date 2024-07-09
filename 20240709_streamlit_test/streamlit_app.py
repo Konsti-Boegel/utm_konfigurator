@@ -22,13 +22,13 @@ user_url = st.text_input('Landingpage-URL eingeben:')
 # Selectbox für Kanäle
 user_channel = st.selectbox('Kanal', sorted(set(get_channels())))
 # Selectbox für Kanalgruppen
-user_channel_group = st.selectbox('Kanalgruppe', get_channel_group())
+user_channel_group = st.selectbox('Kanalgruppe', sorted(set(get_channel_group())))
 # Radio für Werbebudget
 user_budget = st.radio('Werbebudget', get_budget())
 # Selectbox für Formate
-user_format = st.selectbox('Format', get_format())
+user_format = st.selectbox('Format', sorted(set(get_format())))
 # Selectbox für Projekte
-user_project = st.selectbox('Projekt', get_project())
+user_project = st.selectbox('Projekt', sorted(set(get_project())))
 
 
 # Button für Link-Erstellung
