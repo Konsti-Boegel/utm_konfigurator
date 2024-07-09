@@ -27,9 +27,9 @@ def create(param_dict):
         st.error(f'Fehlende Angaben: {", ".join(null_params)}')
     else:
         utm_link = 'https://{url}?utm_channel={channel}&utm_medium={channel_group}'.format(
-            url=param_dict.get('user_url', ''),
-            channel=param_dict.get('user_channel', ''),
-            channel_group=param_dict.get('user_channel_group', '')
+            url=param_dict.get('URL', ''),
+            channel=param_dict.get('Kanal', ''),
+            channel_group=param_dict.get('Kanalgruppe', '')
         )
         st.success(f'Erstellter UTM-Link: {utm_link}')
 
