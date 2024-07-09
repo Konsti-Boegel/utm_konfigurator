@@ -68,6 +68,7 @@ with col1:
 # Button für Reset
 with col2:
     if st.button('Reset'):
+        st.success('Reset')
 
 
 # streamlit run 20240709_streamlit_test/streamlit_app.py
