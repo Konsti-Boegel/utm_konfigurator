@@ -45,7 +45,12 @@ param_dict = {'URL': user_url,
               'Projekt': user_project}
 
 def get_param_dict():
-    return param_dict
+    return {'URL': user_url,
+            'Kanal': user_channel,
+            'Kanalgruppe': user_channel_group,
+            'Werbebudget': user_budget,
+            'Format': user_format,
+            'Projekt': user_project}
 
 
 # Starte den Thread für die Warnung
@@ -55,7 +60,7 @@ warning_thread.start()
 
 # Button für Link-Erstellung
 if st.button('Link erstellen'):
-    create(param_dict)
+    create(get_param_dict())
 # Button für Reset
 st.button('Reset')
 
