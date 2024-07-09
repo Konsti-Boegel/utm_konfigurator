@@ -1,5 +1,6 @@
-def create():
-    x
+def create(url, channel, channel_group, budget, format, project):
+    return 1
 
 def reset():
-    x
+    return 1
+

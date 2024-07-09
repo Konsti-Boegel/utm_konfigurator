@@ -20,15 +20,15 @@ UTM-Link Erstellung
 # Text-Input für URL
 user_url = st.text_input('Landingpage-URL eingeben:')
 # Selectbox für Kanäle
-st.selectbox('Kanal', get_channels())
+user_channel = st.selectbox('Kanal', sorted(set(get_channels())))
 # Selectbox für Kanalgruppen
-st.selectbox('Kanalgruppe', get_channel_group())
+user_channel_group = st.selectbox('Kanalgruppe', get_channel_group())
 # Radio für Werbebudget
-st.radio('Werbebudget', get_budget())
+user_budget = st.radio('Werbebudget', get_budget())
 # Selectbox für Formate
-st.selectbox('Format', get_format())
+user_format = st.selectbox('Format', get_format())
 # Selectbox für Projekte
-st.selectbox('Projekt', get_project())
+user_project = st.selectbox('Projekt', get_project())
 
 
 # Button für Link-Erstellung
