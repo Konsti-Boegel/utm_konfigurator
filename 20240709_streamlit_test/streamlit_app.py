@@ -11,11 +11,14 @@ from util.channel_utils import *
 from util.channel_group_utils import *
 from util.format_utils import *
 from util.project_utils import *
+from util.global_functions import *
 
 st.write("""
 # UTM Konfigurator (Web-Version)
 UTM-Link Erstellung
 """)
+
+show_warning()
 
 # Text-Input für URL
 user_url = st.text_input('Landingpage-URL eingeben:')
