@@ -37,7 +37,7 @@ user_project = st.selectbox('Projekt', sorted(set(get_project())))
 
 
 # Starte den Thread für die Warnung
-warning_thread = threading.Thread(target=show_warning([user_url, user_channel, user_channel_group, user_budget, user_format, user_project]))
+warning_thread = threading.Thread(target=show_warning({'URL': user_url, 'Kanal': user_channel, 'Kanalgruppe': user_channel_group, 'Werbebudget': user_budget, 'Format': user_format, 'Projekt': user_project}))
 warning_thread.start()
 
 

@@ -14,17 +14,13 @@ def reset():
 
 # Funktion zur Anzeige der Warnung
 def show_warning(missing_parameters):
-    while True:
-        null_params = check_null(missing_parameters)
-        if null_params:
-            st.warning(f'Fehlende Angaben: {", ".join(null_params)}')
-        else:
-            st.warning('')
-        time.sleep(1)  # Aktualisiere die Warnung alle 1 Sekunde
+    null_params = check_null(missing_parameters)
+    if null_params:
+        st.warning(f'Fehlende Angaben: {", ".join(null_params)}')
 
 def check_null(parameters):
     null_parameters = []
-    for param in parameters:
-        if param == '':
-            null_parameters.append(param)
+    for key, value in parameters.items():
+        if value == '':
+            null_parameters.append(key)
     return null_parameters
