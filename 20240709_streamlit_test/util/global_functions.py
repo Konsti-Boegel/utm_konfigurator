@@ -7,4 +7,5 @@ def reset():
     return 1
 
 def show_warning(missing_parameters):
-    st.warning('Fehlende Angaben:' + missing_parameters)
+    missing_parameters_str = ', '.join(missing_parameters)  # Wandelt die Liste in einen String um, mit Kommas getrennt
+    st.warning('Fehlende Angaben:' + missing_parameters_str)
