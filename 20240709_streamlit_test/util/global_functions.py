@@ -8,7 +8,6 @@ def show_warning(missing_parameters):
     null_params = check_null(missing_parameters)
     if null_params:
         st.warning(f'Fehlende Angaben: {", ".join(null_params)}')
-        #st.warning(f'test')
 
 
 # Funktion zur Suche nach leeren Parametern
