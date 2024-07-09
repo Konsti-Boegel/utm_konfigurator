@@ -14,12 +14,12 @@ from util.channel_group_utils import *
 from util.format_utils import *
 from util.project_utils import *
 from util.global_functions import *
+from util.global_utils import *
 
 st.write("""
 # UTM Konfigurator (Web-Version)
 UTM-Link Erstellung
 """)
-
 
 
 # Text-Input für URL
@@ -37,7 +37,7 @@ user_project = st.selectbox('Projekt', sorted(set(get_project())))
 
 
 # Starte den Thread für die Warnung
-warning_thread = threading.Thread(target=show_warning({'URL': user_url, 'Kanal': user_channel, 'Kanalgruppe': user_channel_group, 'Werbebudget': user_budget, 'Format': user_format, 'Projekt': user_project}))
+warning_thread = threading.Thread(target=show_warning(get_param_dict()))
 warning_thread.start()
 
 
