@@ -39,6 +39,7 @@ def create(param_dict):
         ).lower()
         st.success(f'Erstellter UTM-Link: {utm_link}')
 
+
 def reset():
     return 1
 
