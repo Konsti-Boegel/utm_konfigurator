@@ -45,5 +45,8 @@ def reset():
 
 
 def generate_id(length=10):
-    characters = string.ascii_letters + string.digits
+    letters = string.ascii_letters
+    digits = string.digits
+    # Kombiniere die Buchstaben und Zahlen mit Wiederholung der Zahlen, um die Chancen auszugleichen
+    characters = letters + digits * (len(letters) // len(digits))
     return ''.join(random.choice(characters) for _ in range(length))
