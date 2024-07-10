@@ -20,7 +20,7 @@ from util.global_utils import *
 st.write("""
 # UTM Konfigurator (Web-Version)
 
-Pflichtfelder
+### Pflichtfelder
 
 """)
 
@@ -37,13 +37,23 @@ user_budget = st.radio('Werbebudget', get_budget())
 user_format = st.selectbox('Format', sorted(set(get_format())))
 # Selectbox für Projekte
 user_project = st.selectbox('Projekt', sorted(set(get_project())))
+# Selectbox für Absender
+user_absender = st.selectbox('Absender', sorted(set(get_absender())))
+
+
+st.write("""
+### Optionale Parameter
+
+""")
+
 
 param_dict = {'URL': user_url,
               'Kanal': user_channel,
               'Kanalgruppe': user_channel_group,
               'Werbebudget': user_budget,
               'Format': user_format,
-              'Projekt': user_project}
+              'Projekt': user_project,
+              'Absender': user_absender}
 
 def get_param_dict():
     return {'URL': user_url,
@@ -51,7 +61,8 @@ def get_param_dict():
             'Kanalgruppe': user_channel_group,
             'Werbebudget': user_budget,
             'Format': user_format,
-            'Projekt': user_project}
+            'Projekt': user_project,
+            'Absender': user_absender}
 
 
 # Starte den Thread für die Warnung
@@ -62,6 +73,8 @@ warning_thread.start()
 # Button für Link-Erstellung
 if st.button('Link erstellen'):
     create(get_param_dict())
+
+
 # Button für Reset
 if st.button('Reset'):
     st.experimental_rerun()
