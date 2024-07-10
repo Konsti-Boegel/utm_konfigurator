@@ -27,8 +27,8 @@ def create(param_dict, opt_param_dict):
     if null_params:
         st.error(f'Fehlende Angaben: {", ".join(null_params)}')
     else:
-        remove_empty_values(param_dict)
-        remove_empty_values(opt_param_dict)
+        param_dict = remove_empty_values(param_dict)
+        opt_param_dict = remove_empty_values(opt_param_dict)
         utm_link = 'https://{url}?utm_source={channel}&utm_medium={budget}_{channel_group}&utm_content={format}_{absender}_{interest}_{ID}&utm_campaign={project}'.format(
             url=param_dict.get('URL', 'NA'),
             channel=param_dict.get('Kanal', 'NA'),
