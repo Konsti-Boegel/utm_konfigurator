@@ -16,6 +16,7 @@ from util.project_utils import *
 from util.global_functions import *
 from util.global_utils import *
 from util.absender_utils import *
+from util.interest_utils import *
 
 
 st.write("""
@@ -52,6 +53,9 @@ st.write("""
  
 """)
 
+# Selectbox für Interesse
+user_interest = st.selectbox('Interesse', sorted(set(get_interest())))
+
 
 param_dict = {'URL': user_url,
               'Kanal': user_channel,
@@ -60,6 +64,8 @@ param_dict = {'URL': user_url,
               'Format': user_format,
               'Projekt': user_project,
               'Absender': user_absender}
+
+opt_param_dict = {'Interesse': user_interest}
 
 def get_param_dict():
     return {'URL': user_url,
@@ -70,6 +76,9 @@ def get_param_dict():
             'Projekt': user_project,
             'Absender': user_absender}
 
+def get_opt_param_dict():
+    return {'Interesse': user_interest}
+
 
 # Starte den Thread für die Warnung
 warning_thread = threading.Thread(target=show_warning(get_param_dict()))
@@ -78,7 +87,7 @@ warning_thread.start()
 
 # Button für Link-Erstellung
 if st.button('Link erstellen'):
-    create(get_param_dict())
+    create(get_param_dict(), get_opt_param_dict())
 
 
 # Button für Reset

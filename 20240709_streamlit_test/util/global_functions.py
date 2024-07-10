@@ -22,18 +22,19 @@ def check_null(parameters):
 
 
 # Funktion zur Erstellung des UTM-Links
-def create(param_dict):
+def create(param_dict, opt_param_dict):
     null_params = check_null(param_dict)
     if null_params:
         st.error(f'Fehlende Angaben: {", ".join(null_params)}')
     else:
-        utm_link = 'https://{url}?utm_source={channel}&utm_medium={budget}_{channel_group}&utm_content={format}_{absender}_{ID}&utm_campaign={project}'.format(
+        utm_link = 'https://{url}?utm_source={channel}&utm_medium={budget}_{channel_group}&utm_content={format}_{absender}_{interest}_{ID}&utm_campaign={project}'.format(
             url=param_dict.get('URL', 'NA'),
             channel=param_dict.get('Kanal', 'NA'),
             budget=param_dict.get('Werbebudget', 'NA'),
             channel_group=param_dict.get('Kanalgruppe', 'NA'),
             format=param_dict.get('Format', 'NA'),
             absender=param_dict.get('Absender', 'NA'),
+            interest=opt_param_dict.get('Interesse', 'NA'),
             ID=generate_id(),
             project=param_dict.get('Projekt', 'NA')
         ).lower()
