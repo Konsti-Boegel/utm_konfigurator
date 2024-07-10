@@ -1,4 +1,5 @@
-absender = ['ALDI Süd',
+absender = ['',
+            'ALDI Süd',
             'ALDI Foto',
             'ALDI Blumen',
             'ALDI Reisen',
