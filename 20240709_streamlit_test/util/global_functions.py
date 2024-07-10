@@ -36,7 +36,7 @@ def create(param_dict):
             absender=param_dict.get('Absender', 'NA'),
             ID=generate_id(),
             project=param_dict.get('Projekt', 'NA')
-        )
+        ).lower()
         st.success(f'Erstellter UTM-Link: {utm_link}')
 
 def reset():
