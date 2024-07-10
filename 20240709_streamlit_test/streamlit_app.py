@@ -19,6 +19,10 @@ from util.absender_utils import *
 from util.interest_utils import *
 
 
+tab1, tab2 = st.tabs(["UTM-Konfigurator", "FAQ"])
+tab1.write("UTM-Link Erstellung")
+
+
 st.write("""
 # UTM Konfigurator (Web-Version)
 ##### 
