@@ -19,7 +19,9 @@ from util.global_utils import *
 
 st.write("""
 # UTM Konfigurator (Web-Version)
-UTM-Link Erstellung
+
+Pflichtfelder
+
 """)
 
 
@@ -57,18 +59,12 @@ warning_thread = threading.Thread(target=show_warning(get_param_dict()))
 warning_thread.start()
 
 
-# Zwei Buttons nebeneinander platzieren
-col1, col2 = st.columns(2)
-
 # Button für Link-Erstellung
-with col1:
-    if st.button('Link erstellen'):
-        create(get_param_dict())
-
+if st.button('Link erstellen'):
+    create(get_param_dict())
 # Button für Reset
-with col2:
-    if st.button('Reset'):
-        st.success('Reset')
+if st.button('Reset'):
+    st.experimental_rerun()
 
 
 # streamlit run 20240709_streamlit_test/streamlit_app.py
